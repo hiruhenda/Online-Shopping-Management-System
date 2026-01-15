@@ -1,0 +1,803 @@
+/* ============================================
+   CHECKOUT PAGE - STRIPE-STYLE DESIGN
+   Clean, Minimal, Professional
+   ============================================ */
+
+/* Base Styles */
+.checkout-page {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.checkout-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 48px;
+}
+
+/* Empty States */
+.checkout-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px 20px;
+}
+
+.empty-content {
+    text-align: center;
+    padding: 48px 40px;
+    background: transparent;
+    max-width: 400px;
+    width: 100%;
+}
+
+.empty-content svg {
+    color: #635bff;
+    margin-bottom: 24px;
+    opacity: 0.8;
+}
+
+.empty-content h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #0a2540;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.empty-content p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    color: #8898aa;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.empty-content .btn {
+    padding: 12px 24px;
+    font-size: 0.938rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+/* Main Checkout Layout */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 100px;
+    align-items: start;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Order Summary Section - Stripe Style */
+.checkout-summary-section {
+    background: transparent;
+    padding: 0;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.summary-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.summary-header h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0a2540;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+}
+
+.summary-total-amount {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0a2540;
+    letter-spacing: -0.5px;
+}
+
+.summary-card {
+    background: transparent;
+}
+
+.summary-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.813rem;
+    font-weight: 600;
+    color: #8898aa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.order-items {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.order-item-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f6f9fc;
+    border: 1px solid #e3e8ee;
+}
+
+.order-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order-item-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.order-item-details h4 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    color: #0a2540;
+    margin-bottom: 4px;
+    font-weight: 500;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.order-item-details p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.813rem;
+    color: #8898aa;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.order-item-price {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    font-weight: 500;
+    color: #0a2540;
+    flex-shrink: 0;
+    text-align: right;
+    min-width: 60px;
+}
+
+.summary-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 8px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    color: #8898aa;
+    line-height: 1.5;
+}
+
+.summary-row.summary-total {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0a2540;
+    padding-top: 16px;
+    margin-top: 4px;
+    border-top: 1px solid #e3e8ee;
+    letter-spacing: -0.2px;
+}
+
+/* Checkout Form Section - Stripe Style */
+.checkout-form-section {
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.checkout-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.checkout-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #0a2540;
+    margin-bottom: 8px;
+    letter-spacing: -0.4px;
+}
+
+.checkout-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    color: #8898aa;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.checkout-form,
+#checkoutForm {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+}
+
+/* Form Layout Grid */
+.form-layout-grid {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.form-column-left,
+.form-column-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.form-column-right .form-section {
+    margin-bottom: 40px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-icon {
+    color: #635bff;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.section-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.813rem;
+    font-weight: 600;
+    color: #8898aa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Form Elements - Stripe Style */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.form-label {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.813rem;
+    color: #0a2540;
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    color: #0a2540;
+    transition: all 0.15s ease;
+    outline: none;
+    box-sizing: border-box;
+    appearance: none;
+    min-width: 0;
+}
+
+.form-input::placeholder {
+    color: #8898aa;
+}
+
+.form-input:focus {
+    border-color: #635bff;
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+    background: #ffffff;
+}
+
+.form-input:hover {
+    border-color: #cbd5e0;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 70px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    width: 100%;
+}
+
+/* Specific form element styles */
+#fullName {
+    width: 546px;
+}
+
+#shippingAddress {
+    height: 47px;
+}
+
+/* Payment Methods - Stripe Style */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.payment-option {
+    display: block;
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 36px;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    color: #0a2540;
+    font-weight: 500;
+    width: 100%;
+}
+
+.payment-card svg {
+    color: #8898aa;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transition: color 0.15s ease;
+}
+
+.payment-option input[type="radio"]:checked + .payment-card {
+    background: #ffffff;
+    border-color: #635bff;
+    color: #0a2540;
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+}
+
+.payment-option input[type="radio"]:checked + .payment-card svg {
+    color: #635bff;
+}
+
+.payment-option:hover .payment-card {
+    border-color: #cbd5e0;
+    background: #ffffff;
+}
+
+/* Checkout Button - Stripe Style */
+.checkout-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: #635bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.938rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-top: 32px;
+}
+
+.checkout-btn:hover {
+    background: #5851ea;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    transform: translateY(-1px);
+}
+
+.checkout-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.checkout-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.checkout-btn svg {
+    transition: transform 0.15s ease;
+    width: 16px;
+    height: 16px;
+}
+
+.checkout-btn:hover svg {
+    transform: translateX(2px);
+}
+
+/* Error Message - Stripe Style */
+.error-message {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.error-message::before {
+    content: '⚠';
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Scrollbar for Summary */
+.checkout-summary-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.checkout-summary-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.checkout-summary-section::-webkit-scrollbar-thumb {
+    background: #e3e8ee;
+    border-radius: 3px;
+}
+
+.checkout-summary-section::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e0;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .checkout-container {
+        max-width: 1400px;
+        padding: 40px 40px;
+    }
+    
+    .checkout-layout {
+        grid-template-columns: 360px 1fr;
+        gap: 80px;
+    }
+    
+    .form-layout-grid {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .checkout-layout {
+        grid-template-columns: 320px 1fr;
+        gap: 64px;
+    }
+    
+    .form-layout-grid {
+        gap: 64px;
+    }
+}
+
+@media (max-width: 968px) {
+    .checkout-container {
+        padding: 32px 20px;
+    }
+    
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .checkout-summary-section {
+        position: static;
+        max-height: none;
+        margin-bottom: 40px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #e3e8ee;
+    }
+    
+    .summary-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .summary-header h2 {
+        font-size: 1.125rem;
+    }
+    
+    .summary-total-amount {
+        font-size: 1.75rem;
+    }
+    
+    .summary-title {
+        display: block;
+        font-size: 0.75rem;
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+    }
+    
+    .checkout-form-section {
+        max-width: 100%;
+    }
+    
+    .checkout-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-column-right {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-container {
+        padding: 24px 16px;
+    }
+    
+    .checkout-summary-section {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+    }
+    
+    .checkout-header {
+        margin-bottom: 32px;
+        padding-bottom: 20px;
+    }
+    
+    .checkout-title {
+        font-size: 1.375rem;
+    }
+    
+    .checkout-subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .section-title {
+        font-size: 0.75rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-input {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+    
+    .payment-card {
+        padding: 10px 28px;
+    }
+    
+    .checkout-btn {
+        padding: 14px 20px;
+        font-size: 0.938rem;
+        margin-top: 28px;
+    }
+    
+    .order-item-image {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-container {
+        padding: 20px 12px;
+    }
+    
+    .checkout-summary-section {
+        margin-bottom: 28px;
+        padding-bottom: 20px;
+    }
+    
+    .checkout-form-section {
+        padding: 0;
+    }
+    
+    .checkout-header {
+        margin-bottom: 28px;
+        padding-bottom: 16px;
+    }
+    
+    .checkout-title {
+        font-size: 1.25rem;
+    }
+    
+    .checkout-subtitle {
+        font-size: 0.813rem;
+    }
+    
+    .section-header {
+        margin-bottom: 16px;
+    }
+    
+    .section-title {
+        font-size: 0.688rem;
+    }
+    
+    .section-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .form-label {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+    
+    .form-input {
+        padding: 11px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+    
+    .form-textarea {
+        min-height: 70px;
+    }
+    
+    .payment-card {
+        padding: 10px 24px;
+        font-size: 0.875rem;
+    }
+    
+    .payment-card svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .checkout-btn {
+        padding: 12px 18px;
+        font-size: 0.875rem;
+        margin-top: 24px;
+    }
+    
+    .summary-header h2 {
+        font-size: 1rem;
+    }
+    
+    .summary-total-amount {
+        font-size: 1.5rem;
+    }
+    
+    .summary-title {
+        font-size: 0.688rem;
+    }
+    
+    .order-item {
+        gap: 12px;
+        padding: 12px 0;
+    }
+    
+    .order-item-image {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .order-item-details h4 {
+        font-size: 0.875rem;
+    }
+    
+    .order-item-details p {
+        font-size: 0.75rem;
+    }
+    
+    .order-item-price {
+        font-size: 0.875rem;
+    }
+    
+    .summary-row {
+        font-size: 0.875rem;
+    }
+    
+    .summary-row.summary-total {
+        font-size: 1rem;
+    }
+    
+    .empty-content {
+        padding: 32px 24px;
+    }
+    
+    .empty-content h2 {
+        font-size: 1.25rem;
+    }
+    
+    .empty-content p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .checkout-container {
+        padding: 16px 10px;
+    }
+    
+    .checkout-title {
+        font-size: 1.125rem;
+    }
+    
+    .form-input {
+        padding: 10px 12px;
+    }
+}
