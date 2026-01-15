@@ -1,0 +1,65 @@
+/* Form Validation Styles */
+
+.field-error {
+    border-bottom-color: #ef4444 !important;
+    border-bottom-width: 2px !important;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.field-error-message {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #ef4444;
+    background: #fef2f2;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-top: 4px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+    border: 1px solid #fecaca;
+    font-weight: 500;
+}
+
+.field-error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.field-error-message::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    background: #fef2f2;
+    border-left: 1px solid #fecaca;
+    border-top: 1px solid #fecaca;
+    transform: rotate(45deg);
+}
+
+/* For input wrapper fields */
+.input-wrapper.field-error .form-input {
+    border: none;
+}
+
+.input-wrapper .field-error-message {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    margin-top: 6px;
+    white-space: nowrap;
+}
